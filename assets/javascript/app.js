@@ -1,0 +1,1 @@
+// Create array of strings for topics variable
