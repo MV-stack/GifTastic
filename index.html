@@ -12,13 +12,25 @@
     <title>GifTastic</title>
   </head>
   <body>
+    <div class="display-buttons"></div>
     <div class="container">
       <form>
         <div class="form-section">
-          <label
+          <label for="">Label Title</label>
+          <input type="text" class="form-control" id="input" placeholder="Giphy...">          
         </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
       </form>
     </div>
+    <div class="search-results">
+      <div class="panel">
+        <div class="body">
+          <div class="giphy-section">      
+          </div>          
+        </div>
+      </div>
+    </div>
+
     
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
