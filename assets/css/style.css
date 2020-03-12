@@ -1,3 +1,13 @@
 body {
-    background-color: ;
+    background-color: dimgray;
+    /*background-image: url(../images/milky-way-984050.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    
+}
+
+.display-buttons {
+    float: left;
+    
 }

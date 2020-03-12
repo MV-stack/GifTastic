@@ -4,7 +4,8 @@ var topics = ['wolves', 'offroad', 'homesteading', 'alaska', 'fishing', 'fitness
 
  function genButtons(){
 
-    $("#buttons-view").empty();
+    $(".display-buttons").empty();
+    
     
     for(i = 0; i <topics.length; i++) {
        var button =  $('<button/>', {
@@ -16,6 +17,12 @@ var topics = ['wolves', 'offroad', 'homesteading', 'alaska', 'fishing', 'fitness
        $(".display-buttons").append(button)
      }
  }
+ $(".btn-primary").on("click", function(event){
+   event.preventDefault();
+   var input = $("#input").val();
+   topics.push(input);
+  genButtons();
+ })
  genButtons();
  $(document).on("click", ".top-genButtons", function(){
      var title = $(this).attr("data-value");
@@ -28,34 +35,42 @@ var topics = ['wolves', 'offroad', 'homesteading', 'alaska', 'fishing', 'fitness
           url: queryURL,
           method: "GET"
         }).then(function(response) {          
-          // Stores giphy from topic button
+          // Stores giphy info
           var results = response.data;
-          console.log(results);
-          // Storing the rating data
-          var rating = response.Rated;
-          // Creating an element to have the rating displayed
-          //var pOne = $("<p>").text("Rating: " + rating);
-          // Displaying the rating
-          //results.append(pOne);
-
-          // for loop to create div to hold giphy
+          console.log(results); //checking results
+         
+          // for loop to create div to hold giphy info
           for (var i =0; i < results.length; i++) {
               console.log(i)
-              var giphyCard = $("<div>")                        
+              var giphyCard = $("<div>");                                  
               var animatedURL = results[i].images.fixed_height.url;
               var stillURL  = results[i].images.fixed_height_still.url;
-              var giphyImage = $("<img>");
+              var giphyImage = $("<img>").addClass("giphyImg");
               var giphyRating = ("<p>Rating: " + results[i].rating.toUpperCase() + "</p>");
+              $(".giphyImg").before("<p></p>");
               giphyImage.attr("src",stillURL );
-              giphyCard.append(giphyRating)
-              
-          
+              giphyCard.append(giphyRating);              
               giphyImage.attr("data-state", "still");
-              giphyImage.addClass("giphy-img");
-                
-              giphyCard.append(giphyImage)
+              giphyImage.attr("data-stillURL", stillURL);
+              giphyImage.attr("data-animatedURL", animatedURL);              
+              console.log(results[i].images);
+              giphyImage.attr('id', "images-"+i);                
+              giphyCard.append(giphyImage);
               $(".giphy-section").append(giphyCard);
+
+              $("#images-"+i).on("click", function() {
+
+                if ($(this).attr("data-state") === "still") {
+                    $(this).attr("src", $(this).attr("data-animatedURL"));
+                    $(this).attr("data-state", "animate");
+                    
+                  } else {
+                      $(this).attr("src", $(this).attr("data-stillURL"));
+                      $(this).attr("data-state", "still");
+                    
+                  }
+              })
           }
 
         });
- })
+ });
