@@ -1,13 +1,14 @@
-body {
-    background-color: dimgray;
-    /*background-image: url(../images/milky-way-984050.jpg);
+body, html {
+    height: 100%;
+    background-image: url(../images/milky-way.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;*/
+   
     
 }
 
 .display-buttons {
-    float: left;
+    float: right;
     
 }

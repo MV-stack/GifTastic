@@ -1,6 +1,6 @@
 // Create array of strings for topics variable
 
-var topics = ['wolves', 'offroad', 'homesteading', 'alaska', 'fishing', 'fitness'];
+var topics = ['milky way', 'galaxy', 'stars', 'nebula', 'black hole', 'astrology'];
 
  function genButtons(){
 
@@ -42,7 +42,7 @@ var topics = ['wolves', 'offroad', 'homesteading', 'alaska', 'fishing', 'fitness
           // for loop to create div to hold giphy info
           for (var i =0; i < results.length; i++) {
               console.log(i)
-              var giphyCard = $("<div>");                                  
+              var giphyCard = $("<div>").addClass("col-md-12");                                  
               var animatedURL = results[i].images.fixed_height.url;
               var stillURL  = results[i].images.fixed_height_still.url;
               var giphyImage = $("<img>").addClass("giphyImg");
