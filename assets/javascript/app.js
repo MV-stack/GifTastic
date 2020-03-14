@@ -29,6 +29,7 @@ $(document).ready(function () {
   })
   genButtons();
   $(document).on("click", ".top-genButtons", function () {
+  $(".giphy-section").empty()
     var title = $(this).attr("data-value");
     console.log("title: " + title)
     var apiKey = "Pi3IpyjBiZFkZmSASKn4J57JdmSj6rlf";
