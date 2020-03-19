@@ -47,20 +47,21 @@ $(document).ready(function () {
       // for loop to create div to hold giphy info
       for (var i = 0; i < results.length; i++) {
         console.log(i)
-        var giphyCard = $("<div>").addClass("col-md-12");
+        var giphyCard = $("<div>").addClass("col");
         var animatedURL = results[i].images.fixed_height.url;
         var stillURL = results[i].images.fixed_height_still.url;
         var giphyImage = $("<img>").addClass("giphyImg");
         var giphyRating = ("<p>Rating: " + results[i].rating.toUpperCase() + "</p>");
         $(".giphyImg").before("<p></p>");
         giphyImage.attr("src", stillURL);
-        giphyCard.append(giphyRating);
+        
         giphyImage.attr("data-state", "still");
         giphyImage.attr("data-stillURL", stillURL);
         giphyImage.attr("data-animatedURL", animatedURL);
         console.log(results[i].images);
         giphyImage.attr('id', "images-" + i);
         giphyCard.append(giphyImage);
+        giphyCard.append(giphyRating);
         $(".giphy-section").append(giphyCard);
 
         $("#images-" + i).on("click", function () {
