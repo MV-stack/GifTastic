@@ -13,7 +13,6 @@ $(document).ready(function () {
       var button = $('<button/>', {
         text: topics[i],
         class: "top-genButtons",
-
       });
       button.attr("data-value", topics[i])
       $(".display-buttons").append(button)
@@ -33,7 +32,7 @@ $(document).ready(function () {
     var title = $(this).attr("data-value");
     console.log("title: " + title)
     var apiKey = "Pi3IpyjBiZFkZmSASKn4J57JdmSj6rlf";
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=" + apiKey + "&limit=10&rating<=pg"
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=" + apiKey + "&limit=12&rating<=pg"
 
     // Create AJAX call for the specific topic button being clicked
     $.ajax({
@@ -47,12 +46,12 @@ $(document).ready(function () {
       // for loop to create div to hold giphy info
       for (var i = 0; i < results.length; i++) {
         console.log(i)
-        var giphyCard = $("<div>").addClass("col");
+        var giphyCard = $("<div>").addClass("col-3");
         var animatedURL = results[i].images.fixed_height.url;
         var stillURL = results[i].images.fixed_height_still.url;
         var giphyImage = $("<img>").addClass("giphyImg");
         var giphyRating = ("<p>Rating: " + results[i].rating.toUpperCase() + "</p>");
-        $(".giphyImg").before("<p></p>");
+        
         giphyImage.attr("src", stillURL);
         
         giphyImage.attr("data-state", "still");

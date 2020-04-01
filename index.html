@@ -15,24 +15,28 @@
 </head>
 
 <body>
-  <div class="display-buttons"></div>
-  <div class="container">
-    <form>
-      <div class="form-section">
-        <label for=""></label>
-        <input type="text" class="col-md-4" id="input" placeholder="Search for Giphy...">
+  <div class="totalArea">
+    <div class="row">
+      <div class="col-5">
+        <form class="row">
+          <div class="form-section col-4">
+            <label for=""></label>
+            <input type="text" id="input" placeholder="Search for Giphy...">
+          </div>
+          <div class="col-3">
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+          </div>
+        </form>
       </div>
-      <div>
-        <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+      <div class="col-7">
+        <div class="display-buttons"></div>
       </div>
-
-    </form>
-  </div>
+    </div>
     <div class="search-results panel body">
-    <div class="giphy-section row">
+      <div class="giphy-section row">
+      </div>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

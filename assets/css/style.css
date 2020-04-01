@@ -3,12 +3,39 @@ body, html {
     background-image: url(../images/milky-way.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;      
+}
+
+input[type=text] {
+    width: 95%;
+}
+
+.totalArea {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+
    
+}
+.search-results {
+    margin-top: 50px;
+    margin-left: 75px;
+}
+
+p {
+    color: white;
+    font-size: 20px;
     
 }
 
 .display-buttons {
     float: right;
     
+}
+
+
+
+.giphyImg{
+height: 350px;
+width: 350px;
 }
