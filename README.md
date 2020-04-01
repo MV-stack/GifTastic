@@ -5,7 +5,7 @@
 This assignment uses the GIPHY API to make a dynamic web page that populates gifs of your choice. This assignment uses the GIPHY API, JavaScript and jQuery. This assignment focuses on using APIs and Ajax.
 
 
-![GifTastic](images/Giftastic.png)
+![](images/Giftastic.png)
 
 ### Summary
 
