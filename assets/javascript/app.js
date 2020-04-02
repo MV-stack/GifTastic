@@ -32,7 +32,7 @@ $(document).ready(function () {
     var title = $(this).attr("data-value");
     console.log("title: " + title)
     var apiKey = "Pi3IpyjBiZFkZmSASKn4J57JdmSj6rlf";
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=" + apiKey + "&limit=12&rating<=pg"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=" + apiKey + "&limit=12&rating<=pg"
 
     // Create AJAX call for the specific topic button being clicked
     $.ajax({
